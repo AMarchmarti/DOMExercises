@@ -26,13 +26,16 @@ redirectLinks()
 function linksInParragraph(){
     let parragraph = document.getElementsByTagName('p')
     let map = []
+    let count = 0
     for(let i = 0; i < parragraph.length; i++){
-        console.log('Parragraph ' + i + ': ',  parragraph[i].getElementsByTagName('a').length);
+        let links = parragraph[i].getElementsByTagName('a').length
         map.push({
-            'parragraph': `Parragraph ${i}`,
-            'countLinks': parragraph[i].getElementsByTagName('a').length
+            'parragraph': i,
+            'countLinks': links,
         })
+        count += links
     }
     console.log('map :', map);
+    console.log('count :', count);
 }
 linksInParragraph()
